@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!--    <data noupdate="0">-->
+    <!-- Email template -->
+    <!--        <record id="loyalty_email_template" model="mail.template">-->
+    <!--            <field name="name">Loyalty Email</field>-->
+    <!--            <field name="model_id" ref="model_loyalty_history"/>-->
+    <!--            <field name="subject">Happy Birthday from COM</field>-->
+    <!--            <field name="email_from">benhbaibua12312@gmail.com</field>-->
+    <!--            <field name="email_to">thinhbanhphuc@gmail.com</field>-->
+    <!--&lt;!&ndash;            <field name="auto_delete" eval="True"/>&ndash;&gt;-->
+    <!--&lt;!&ndash;            <field name="lang">${object.partner_id.lang}</field>&ndash;&gt;-->
+    <!--            <field name="body_html">-->
+    <!--                <![CDATA[-->
+    <!--                <html>-->
+    <!--                    <head>-->
+    <!--                        <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>-->
+    <!--                        <title>Happy More Point</title>-->
+    <!--                    </head>-->
+    <!--                    <body>-->
+    <!--                        <p>Dear Sir,</p>-->
+    <!--                        <p>Your order is ok ok ok</p>-->
+    <!--                        <field name="loyalty_points"/>-->
+    <!--                        <p>${object.money_spent}</p>-->
+    <!--                        <p>This is automated mail, don't reply.</p>-->
+    <!--                    </body>-->
+    <!--                </html>-->
+    <!--&lt;!&ndash;                <p><strong>Dear </strong></p>&ndash;&gt;-->
+    <!--&lt;!&ndash;                <p><strong>Department: &#45;&#45;department&#45;&#45;</strong></p>&ndash;&gt;-->
+    <!--&lt;!&ndash;                <p>Please do the folowing activities.</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;                <ol>&ndash;&gt;-->
+    <!--&lt;!&ndash;                    <li>Activity 1 <strong>&#45;&#45;variable_holds_dynamic_data_1&#45;&#45;</strong>.</li>&ndash;&gt;-->
+    <!--&lt;!&ndash;                    <li>Activity 2 <strong>&#45;&#45;variable_holds_dynamic_data_2&#45;&#45;</strong>.</li>&ndash;&gt;-->
+    <!--&lt;!&ndash;                    <li>Activity 3 <strong>&#45;&#45;variable_holds_dynamic_data_3&#45;&#45;</strong>.</li>&ndash;&gt;-->
+    <!--&lt;!&ndash;                    <li>Activity 4 <strong>&#45;&#45;variable_holds_dynamic_data_4&#45;&#45;</strong>.</li>&ndash;&gt;-->
+    <!--&lt;!&ndash;                </ol>&ndash;&gt;-->
+    <!--&lt;!&ndash;                <p>After successfully complestion of above activities, please reply-all to this email thread.</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;                <p>Regards,</p>&ndash;&gt;-->
+    <!--&lt;!&ndash;                <p>Department</p>&ndash;&gt;-->
+    <!--                ]]>-->
+    <!--            </field>-->
+    <!--        </record>-->
+
+
+    <record id="email_template_id_goes_here" model="mail.template">
+        <field name="name">Email Template Name</field>
+        <field name="model_id" ref="loyalty_program.model_loyalty_history"></field>
+         <field name="email_from">benhbaibua12312@gmail.com</field>
+         <field name="email_to">thinhbanhphuc@gmail.com</field>
+        <field name="subject">You Email Subject Goes Here</field>
+        <field name="body_html"><![CDATA[
+                    <p><strong>Dear Manager(s)</strong></p>
+                    <p><strong>Department: --department--</strong></p>
+                    <p>Please do the following actvities.</p>
+                    <ol>
+                        <li>Activity 1 <strong>--variable_holds_dynamic_data_1--</strong>.</li>
+<!--                        <li>Activity 2 <strong>&#45;&#45;variable_holds_dynamic_data_2&#45;&#45;</strong>.</li>-->
+<!--                        <li>Activity 3 <strong>&#45;&#45;variable_holds_dynamic_data_3&#45;&#45;</strong>.</li>-->
+<!--                        <li>Activity 4 <strong>&#45;&#45;variable_holds_dynamic_data_4&#45;&#45;</strong>.</li>-->
+                    </ol>
+<!--                    <p>For more information, Please review the product <strong>&#45;&#45;product_number_goes_here&#45;&#45;</strong>.</p>-->
+                    <p>After successfully complestion of above activities, please reply-all to this email thread.</p>
+                    <p>Regards,</p>
+                    <p>Department</p>
+<!--                    <p><strong>&#45;&#45;brach&#45;&#45;</strong></p>-->
+                    ]]>
+        </field>
+    </record>
+    <!--    </data>-->
+</odoo>
