@@ -6,7 +6,8 @@ class ResConfigSettings(models.TransientModel):
 
     loyalty_email_notify = fields.Boolean(
         default=False,
-        string='Email Notify'
+        string='Email Notify',
+        config_parameter = 'loyalty_email_notify'
     )
 
     loyalty_for_sale_id = fields.Many2one(

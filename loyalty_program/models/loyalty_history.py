@@ -30,9 +30,16 @@ class LoyaltyHistory(models.Model):
         string='Mã đơn hàng'
     )
 
+    def _default_loyalty_program(self):
+        loyalty_id = int(self.env['ir.config_parameter'].sudo().get_param('loyalty_for_sale_id', False))
+        loyalty = self.env['loyalty.program'].browse(loyalty_id)
+        return loyalty if loyalty_id and loyalty.exists() else None
+
     @api.model
     def create(self, vals):
-        self.btn_send_email()
+        print(bool(self.env['ir.config_parameter'].sudo().get_param('loyalty_email_notify', False)))
+        if bool(self.env['ir.config_parameter'].sudo().get_param('loyalty_email_notify', False)):
+            self.btn_send_email()
         return super(LoyaltyHistory, self).create(vals)
 
     def btn_send_email(self):
@@ -62,4 +69,3 @@ class LoyaltyHistory(models.Model):
             print('send mail')
             print(self.partner_id)
             print(self.loyalty_points)
-
